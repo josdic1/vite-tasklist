@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <link rel="stylesheet" href="./src/style.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task List</title>
+  <title>Helpful Links</title>
 </head>
 
 <body>
-  <h1>Tasks</h1>
-  <ul id="task-list"></ul>
+  <div id="header"></div>
+  <form id="form"></form>
+  <div id="filter"></div>
+  <div id="list"></div>
 
-  <form id="task-form">
-    <input type="text" id="task-input" placeholder="New Task" required>
-    <button type="submit">Add Task</button>
-  </form>
-
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 
 </html>
