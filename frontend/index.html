@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
   <link rel="stylesheet" href="./src/style.css">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helpful Links</title>
+  <title>Task List</title>
 </head>
 
 <body>
-  <div id="header"></div>
-  <form id="form"></form>
-  <div id="filter"></div>
-  <div id="list"></div>
+  <h1>Tasks</h1>
+
+  <form id="task-form">
+    <input type="text" id="task-input" placeholder="Enter a task" required />
+    <button type="submit">Add Task</button>
+  </form>
+
+  <ul id="task-list"></ul>
 
   <script type="module" src="./src/main.js"></script>
 </body>

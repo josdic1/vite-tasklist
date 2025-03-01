@@ -3,9 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskInput = document.getElementById("task-input");
   const taskForm = document.getElementById("task-form");
 
+  // ✅ Check if elements exist before using them
+  if (!taskList || !taskInput || !taskForm) {
+    console.error("Missing required elements in HTML!");
+    return;
+  }
+
   // Fetch and display tasks
   function fetchTasks() {
-    fetch("/api/tasks") // ✅ Vite proxy will map this to `http://localhost:4000/tasks`
+    fetch("https://vite-tasklist-api.onrender.com/tasks")
       .then(res => res.json())
       .then(data => {
         taskList.innerHTML = data.map(task => `<li>${task.title}</li>`).join("");
@@ -19,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = taskInput.value.trim();
     if (!title) return;
 
-    fetch("/api/tasks", {
+    fetch("https://vite-tasklist-api.onrender.com/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title }),
